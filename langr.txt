@@ -1,0 +1,21 @@
+n=input('Enter the no.of elements n:');
+for i=1:n
+x(i)=input('Enter the value of x :');
+y(i)=input('Enter the value of y :');
+end
+xg=input('Enter the value of xg :');
+yg=0;
+for j=1:n
+    nu=1;
+    de=1;
+    for i=1:n
+        if(i~=j)
+            nu=nu*(xg-x(i));
+            de=de*(x(j)-x(i));
+        end
+    end
+    l(j)=nu/de;
+    fprintf('\n L%f=%f',j,l(j));
+    yg=yg+l(j)*y(j);
+end
+    fprintf('The final value of yg %f',yg);

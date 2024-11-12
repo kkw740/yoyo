@@ -1,0 +1,24 @@
+f=input('enter the function y=f(x)= '); 
+df=input('enter derivative of equation =dy=df(x)='); 
+ddf=input('enter double derivative of equation of equation =ddy=ddf(x)='); 
+x1=input('enter the 1st initial guess x1='); 
+n=input('enter no of iterations n='); 
+y1=f(x1); 
+y2=df(x1); 
+y3=ddf(x1); 
+a=(y1*y3)/(y2*y2); 
+while (abs(a)>1) 
+x1=input('enter 1st initial guess again x1='); 
+y1=f(x1); 
+y2=df(x1); 
+y3=ddf(x1); 
+a=(y1*y3)/(y2*y2); 
+end  
+for i=1:n 
+x2=x1-(y1/y2); 
+fprintf('\n the root of equation is=%f',x2); 
+x1=x2; 
+y1=f(x1); 
+y2=df(x1); 
+end 
+fprintf('\n Final root of equation is=%f',x2); 

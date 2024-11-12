@@ -1,0 +1,24 @@
+f = input('enter function y = f(x) = '); 
+x1 = input('enter 1st initial guess x1 = '); 
+x2 = input('enter 2nd initial guess x2 = '); 
+n = input('enter no of iterations n = '); 
+y1 = f(x1); 
+y2 = f(x2); 
+while (y1*y2 > 0) 
+x1 = input('enter 1st initial guess again x1 = '); 
+x2 = input('enter 2nd initial guess again x2 = '); 
+y1 = f(x1); 
+y2 =f(x2); 
+end 
+for i = 1:n 
+x3 = (x1 + x2)/2; 
+y3 = f(x3); 
+if (y1 * y3 < 0) 
+x2 = x3; 
+y2 = y3; 
+else  
+x1 = x3;  
+y1 = y3; 
+end 
+end 
+fprintf('\n The root of equation is = %f', x3); 
