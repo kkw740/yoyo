@@ -1,0 +1,32 @@
+clc;
+clear all;
+close all;
+x=input('Enter the value of x in []:-');
+y=input('Enter the value of y in []:-');
+while length(x)~=length(y)
+    x=input('AGAIN Enter the values of x in []:-');
+    y=input('AGAIN Enter the values of y in []:-');
+end
+X=log(x);
+Y=log(y);
+n=length(x);
+sX=0;
+sY=0;
+sXY=0;
+sX2=0;
+
+for i=1:n
+    sX=sX+X(i);
+    sY=sY+Y(i);
+    sXY=sXY+(X(i)*Y(i));
+    sX2=sX2+(X(i)*X(i));
+end
+a=[sX n;sX2 sX];
+b=[sY;sXY];
+ans=inv(a)*b;
+A=ans(1);
+B=ans(2);
+a=exp(B);
+b=A;
+fprintf('The solution is A=%f and B=%f',ans(1),ans(2));
+fprintf('\n y=(%0.4f)*x^(%0.4f)',a,b);
